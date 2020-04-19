@@ -1,0 +1,20 @@
+{
+     "name":"simaple",
+  "type": "mongodb",
+
+     "username": "test",
+     "password": "test",
+     "database": "typeGraphql",
+
+     "synchronize": true,
+     "logging": true,
+     "entities": [
+          "src/entity/**/*.ts"
+     ],
+     "migrations": [
+          "src/migration/**/*.ts"
+     ],
+     "subscribers": [
+          "src/subscriber/**/*.ts"
+     ]
+}

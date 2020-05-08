@@ -1,0 +1,13 @@
+# import Error from '../src/shared.graphql'
+input RegisterInput {
+  email:String!
+  password:String!
+
+}
+type Query{
+  by:String!
+}
+
+type Mutation{
+  register(data:RegisterInput):[Erorr!]
+}

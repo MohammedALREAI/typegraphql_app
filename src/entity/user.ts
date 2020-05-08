@@ -1,23 +1,33 @@
-import {Entity, PrimaryGeneratedColumn, BaseEntity,Column} from "typeorm";
-import { Field,ObjectType,ID } from "type-graphql";
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from "typeorm";
+import { ObjectType, Field, ID, Root } from "type-graphql";
 
-
+@ObjectType()
 @Entity()
-export class User extends BaseEntity{
-@Field(()=>ID)
-    @PrimaryGeneratedColumn()
-    id: number;
-@Field(()=>String)
-    @Column()
-    firstName: string;
-@Field(()=>String)
-    @Column()
-    lastName: string;
-@Field(()=>String)
-    @Column()
-    email: string;
-@Field(()=>String)
-    @Column()
-    password: String;
+export class User extends BaseEntity {
+     // @Field(() => ID)
+     @PrimaryGeneratedColumn("uuid")
+     id: number;
 
+     // @Field()
+     // @Column()
+     // firstName: string;
+
+     // @Field()
+     // @Column()
+     // lastName: string;
+
+     // // @Field()
+     @Column("varchar", {length:255 })
+     email: string;
+
+     // @Field({ complexity: 3 })
+     name(@Root() parent: User): string {
+          return `${parent.firstName} ${parent.lastName}`;
+     }
+
+     @Column("text")
+     password: string;
+
+     @Column("bool", { default: false })
+     confirmed: boolean;
 }

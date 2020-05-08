@@ -1,0 +1,17 @@
+
+#  import Error from'../src/modules/shared.graphql'
+# this is shared graphq
+
+type Query{
+by:String
+}
+
+
+input InputRegister{
+  email:String!
+  password:String!
+}
+type Mutation{
+register(data:InputRegister):[Error!]!
+}
+# //this is Shared bettwen all the schema

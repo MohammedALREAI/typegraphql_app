@@ -1,0 +1,8 @@
+
+input HelloInput {
+name:String!
+}
+type Query{
+
+  hello(data:HelloInput!):String!
+}

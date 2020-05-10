@@ -1,22 +1,17 @@
 import * as bcrypt from "bcryptjs";
-import { User } from "src/entity/user";
-import { ResolversMap } from "./../../types/graphql-utils.d";
-import { MessageError } from "./../../utils/MessageError";
+import User from'../../entity/user';
+MessageError
+import * as yup from "yup";
+import  {redis}  from './../../redis';
 import {
   ERROR_MESSAGE_EMAIL,
   ERROR_MESSAGE_PASSWORD,
 } from "../user/Register/ErrorMessages";
-import * as yup from "yup";
-
 import { formatYupError } from "src/utils/YupValidation";
-
-// interface InputArgsRegister{
-//      data:{
-//           email:String,
-//           password:String
-//      }
-
-// }
+import { createConfirmEmailUrl } from "./../../utils/createUrl";
+import { sendEmail } from "./../../utils/sendMail";
+import { ResolversMap } from './../../types/graphql-utils.d';
+import { MessageError } from './../../utils/MessageError';
 
 const schemaValidationRegister = yup.object().shape({
   email: yup
@@ -37,8 +32,12 @@ export const resolvers: ResolversMap = {
   },
 
   Mutation: {
-    register: async (_: any, args: GQL.IRegisterOnMutationArguments) => {
-            let { email, password }:any= args.data;
+    register: async (
+      _: any,
+      args: GQL.IRegisterOnMutationArguments,
+      { redis, url }
+    ) => {
+      let { email, password }: any = args.data;
       email = email.toLowerCase();
 
       try {
@@ -61,11 +60,15 @@ export const resolvers: ResolversMap = {
         ];
       }
 
-      const hashPassword = await bcrypt.hash(password, 20);
-      await User.create({
+      const hashPassword = await bcrypt.hash(
+        password,
+        process.env.BCRYPT_LANGTH as string
+      );
+      const user = await User.create({
         email,
         password: hashPassword,
       }).save();
+      await sendEmail(email, await createConfirmEmailUrl(url, user.id, redis));
 
       return null;
     },

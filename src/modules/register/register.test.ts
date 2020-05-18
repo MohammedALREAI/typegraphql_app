@@ -5,6 +5,7 @@ import {
   ERROR_MESSAGE_EMAIL,
   ERROR_MESSAGE_PASSWORD,
 } from "../user/Register/ErrorMessages";
+import { Connection } from "typeorm";
 
 
 const mutation = (email: string, password: string) => `
@@ -16,10 +17,14 @@ mutation {
      }
 }
 `;
+let con:Connection;
 beforeAll(async()=>{
-     await createTypeOrmConn();
+    con= await createTypeOrmConn();
 })
 
+afterAll(()=>{
+     con.close();
+})
 // WE NEED TO DROP OF ALL THE DATABASE BEFORE START
 describe("should register user", async () => {
   test("check if mail is found", async () => {

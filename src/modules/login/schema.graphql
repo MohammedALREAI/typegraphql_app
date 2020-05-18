@@ -1,0 +1,14 @@
+# import Error from '../src/shared.graphql'
+input ILoginInput {
+  email:String!
+  password:String!
+
+}
+
+type Query{
+  by2:String!
+}
+
+type Mutation{
+  login(data:ILoginInput):[Erorr!]
+}

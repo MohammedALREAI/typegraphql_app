@@ -14,5 +14,5 @@ export const GenerateSchemeDefinition = () => {
     );
     schemas.push(makeExecutableSchema({ resolvers, typeDefs }));
   });
-  return mergeSchemas({ schemas });
+  return mergeSchemas({ schemas }) as GraphQLSchema;
 };

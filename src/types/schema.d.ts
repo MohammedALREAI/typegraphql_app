@@ -30,6 +30,14 @@ interface IHelloOnQueryArguments {
 data: IHelloInput;
 }
 
+ interface ILoginInput {
+     email: string;
+password: string;
+}
+interface  ILoginOnMutationArguments {
+data:ILoginInput!
+}
+
 interface IHelloInput {
 name: string;
 }

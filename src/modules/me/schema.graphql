@@ -1,0 +1,9 @@
+# import Error from '../src/shared.graphql'
+type User{
+  id:ID!
+  email:String
+}
+type Query{
+  me:User!
+}
+

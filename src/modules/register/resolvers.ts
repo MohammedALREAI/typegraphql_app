@@ -1,6 +1,6 @@
 import * as bcrypt from "bcryptjs";
 import User from'../../entity/user';
-MessageError
+
 import * as yup from "yup";
 import  {redis}  from './../../redis';
 import {
@@ -12,20 +12,9 @@ import { createConfirmEmailUrl } from "./../../utils/createUrl";
 import { sendEmail } from "./../../utils/sendMail";
 import { ResolversMap } from './../../types/graphql-utils.d';
 import { MessageError } from './../../utils/MessageError';
+import { schemaValidationRegister } from './../../utils/registerValidation';
 
-const schemaValidationRegister = yup.object().shape({
-  email: yup
-    .string()
-    .email(ERROR_MESSAGE_EMAIL.FORMAT_SHOULD_BE_MAIL)
-    .min(7, ERROR_MESSAGE_EMAIL.EMAIL_NOT_LONG_ENOUGH)
-    .max(255, ERROR_MESSAGE_EMAIL.EMAIL_NOT_LONG_ENOUGH)
-    .required(),
-  password: yup
-    .string()
-    .min(6, ERROR_MESSAGE_PASSWORD.PASSWORD_NOT_LONG_ENOUGH)
-    .max(30, ERROR_MESSAGE_PASSWORD.PASSWORD_NOT_LONG_ENOUGH)
-    .required(),
-});
+
 export const resolvers: ResolversMap = {
   Query: {
     by: () => "bay🙌",

@@ -4,7 +4,7 @@
   "scripts": {
     "start": "NODE_ENV=development nodemon --exec src/index.ts",
     "test": "NODE_ENV=test jest --forceExit",
-    "gen-schema-types": "ts-node src/scripts/createType.ts"
+    "gen": "ts-node src/scripts/createType.ts"
   },
   "dependencies": {
     "apollo-server-express": "^2.12.0",

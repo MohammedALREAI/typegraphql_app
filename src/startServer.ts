@@ -10,9 +10,10 @@ import { middleware } from "./modules/middelware/index";
 // yarn add sparkpost with type
 // yarn add connect-redis
 
+const schema:any=GenerateSchemeDefinition();
 export const startServer = async () => {
-  const server: GraphQLServer = new GraphQLServer({
-    schema: GenerateSchemeDefinition(),
+  const server = new GraphQLServer({
+    schema,
     context: ({ request }) => ({
       redis,
       url: `request.protocol://${request.get("host")}`,

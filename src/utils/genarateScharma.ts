@@ -4,7 +4,7 @@ import { GraphQLSchema } from "graphql";
 import { importSchema } from "graphql-import"; //WE WE NEED RESOLVER FILE TO RSOLVE
 import { mergeSchemas, makeExecutableSchema } from "graphql-tools";
 
-export const GenerateSchemeDefinition = () => {
+export const GenerateSchemeDefinition =  () => {
   const schemas: GraphQLSchema[] = [];
   const folders: String[] = fs.readdirSync(path.join(__dirname, "../modules"));
   folders.forEach((folder) => {

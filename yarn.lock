@@ -798,6 +798,16 @@
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
 
+"@types/connect-redis@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@types/connect-redis/-/connect-redis-0.0.14.tgz#b4bc8e5510bdd9dfcc7b22bda527151f94cf52e5"
+  integrity sha512-snjiYYc1TUk4iJvwO41omcrZKBB0mdwMvl718m7zZj5Tz7qBqjTNS23KQdHF2QmJX/x40m1IH16R6GNLh2Et4Q==
+  dependencies:
+    "@types/express" "*"
+    "@types/express-session" "*"
+    "@types/ioredis" "*"
+    "@types/redis" "*"
+
 "@types/connect@*":
   version "3.4.33"
   resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.33.tgz#31610c901eca573b8713c3330abc6e6b9f588546"
@@ -840,7 +850,7 @@
     "@types/node" "*"
     "@types/range-parser" "*"
 
-"@types/express-session@^1.17.0":
+"@types/express-session@*", "@types/express-session@^1.17.0":
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/@types/express-session/-/express-session-1.17.0.tgz#770daf81368f6278e3e40dd894e1e52abbdca0cd"
   integrity sha512-OQEHeBFE1UhChVIBhRh9qElHUvTp4BzKKHxMDkGHT7WuYk5eL93hPG7D8YAIkoBSbhNEY0RjreF15zn+U0eLjA==
@@ -914,6 +924,13 @@
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@types/http-assert/-/http-assert-1.5.1.tgz#d775e93630c2469c2f980fc27e3143240335db3b"
   integrity sha512-PGAK759pxyfXE78NbKxyfRcWYA/KwW17X290cNev/qAsn9eQIxkH4shoNBafH37wewhDG/0p1cHPbK6+SzZjWQ==
+
+"@types/ioredis@*":
+  version "4.16.2"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.16.2.tgz#192c487a003463a6881dbc29faaa168902ef851a"
+  integrity sha512-b1wSWCLx5ygzDZ2d1BYBzsTzUcPEOcJH8d5O6AJGGJXjE6C+HrlA61sw5GQNqtqTPVo2Hpc4rPA30lI0T6QSLQ==
+  dependencies:
+    "@types/node" "*"
 
 "@types/ioredis@^4.16.1":
   version "4.16.1"
@@ -1047,6 +1064,13 @@
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
   integrity sha512-ewFXqrQHlFsgc09MK5jP5iR7vumV/BYayNC6PgJO2LPe8vrnNFyjQjSppfEngITi0qvfKtzFvgKymGheFM9UOA==
+
+"@types/redis@*":
+  version "2.8.21"
+  resolved "https://registry.yarnpkg.com/@types/redis/-/redis-2.8.21.tgz#4bd4a56747ee57156e50a4389ece0f79f1dfeac6"
+  integrity sha512-EcqWrhXnzlo2z7AwZG3jEuwGcs/QZoab1lBbOHRfV/ezzVrczpkFrCoQorWp3dvp7pfOJtAryxBFou0zQFYpDQ==
+  dependencies:
+    "@types/node" "*"
 
 "@types/request@*":
   version "2.48.4"
@@ -1185,6 +1209,11 @@ acorn@^7.1.0:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.1.1.tgz#e35668de0b402f359de515c5482a1ab9f89a69bf"
   integrity sha512-add7dgA5ppRPxCFJoAGfMDi7PIBXq1RtGo7BhbLaxwrXPOmw8gq48Y9ozT01hUKy9byMjlR20EJhu5zlkErEkg==
+
+add@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
+  integrity sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=
 
 aggregate-error@3.0.1:
   version "3.0.1"
@@ -6960,6 +6989,11 @@ yargs@^15.0.0, yargs@^15.3.1:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^18.1.1"
+
+yarn@^1.22.4:
+  version "1.22.4"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.4.tgz#01c1197ca5b27f21edc8bc472cd4c8ce0e5a470e"
+  integrity sha512-oYM7hi/lIWm9bCoDMEWgffW8aiNZXCWeZ1/tGy0DWrN6vmzjCXIKu2Y21o8DYVBUtiktwKcNoxyGl/2iKLUNGA==
 
 yn@3.1.1:
   version "3.1.1"
